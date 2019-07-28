@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/pho" android:title="Pho"></item>
+    <item android:id="@+id/banh_mi" android:title="Banh mi"></item>
+    <item android:id="@+id/banh_xeo" android:title="Banh Xeo"></item>
+</menu>

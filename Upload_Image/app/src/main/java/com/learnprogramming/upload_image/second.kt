@@ -12,6 +12,6 @@ class second : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         var image = intent.getStringExtra("uri")
         var uri = Uri.parse(image)
-        imageView.setImageURI(uri);
+        imageView.setImageURI(uri)
     }
 }
