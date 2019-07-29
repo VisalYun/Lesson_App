@@ -13,6 +13,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URI
 
 class MainActivity : AppCompatActivity() {
@@ -64,15 +65,29 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
+    private var selectedImage = ""
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(resultCode == Activity.RESULT_OK){
             if(requestCode==1){
-                var seletedImage = data?.data
-                val intent = Intent(this,second::class.java)
-                intent.putExtra("uri",seletedImage.toString())
-                startActivity(intent)
+                var image = data?.data
+                selectedImage = image.toString()
+                imageView2.setImageURI(image)
             }
         }
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    fun send(v:View){
+        val intent = Intent(this,second::class.java)
+        intent.putExtra("uri",selectedImage)
+        startActivity(intent)
+    }
+
+    fun share(v:View){
+        var i = Intent()
+        i.action=Intent.ACTION_SEND
+        i.putExtra(Intent.EXTRA_TEXT,selectedImage)
+        i.type = "image/*"
+        startActivity(Intent.createChooser(i,"Send to"))
     }
 }
