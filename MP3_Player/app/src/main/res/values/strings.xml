@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MP3_Player</string>
+
+    <array name="songlist">
+        <item>One Call Away</item>
+        <item>Cheap Thrill</item>
+        <item>Do not want to know</item>
+        <item>Lily</item>
+        <item>Boy</item>
+    </array>
+</resources>
