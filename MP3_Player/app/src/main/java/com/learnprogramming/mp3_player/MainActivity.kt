@@ -8,10 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.SeekBar
-import android.widget.Toast
-import android.widget.ViewAnimator
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         var songArrays = resources.getStringArray(R.array.songlist)
         var arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,songArrays)
-        song_list.adapter = arrayAdapter
+        song_list.adapter = arrayAdapter as ListAdapter?
 
         song_list.setOnItemClickListener{ adapterView, view, i, l ->
             index = i
